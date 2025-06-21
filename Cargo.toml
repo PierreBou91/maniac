@@ -2,5 +2,11 @@
 name = "maniac"
 version = "0.1.0"
 edition = "2024"
+description = "A Rust library implementing different sorting algorithms."
+license = "MIT OR Apache-2.0"
+repository = "TBD"
+readme = "# Maniac"
+keywords = ["sorting", "algorithms", "rust"]
+categories = ["algorithms"]
 
 [dependencies]
