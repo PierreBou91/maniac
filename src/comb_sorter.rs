@@ -24,6 +24,7 @@ use super::Sorter;
 /// |Best|Average|Worst|Space|In-place|
 /// |---|---|---|---|---|
 /// |n log n|n<sup>2</sup>|n<sup>2</sup>|1|Yes|
+#[derive(Debug, Clone, Copy)]
 pub struct CombSorter {
     // TODO: determine wether it should be public, or at least give a `with` constructor or builder
     // pattern
@@ -70,24 +71,9 @@ impl<T: Ord> Sorter<T> for CombSorter {
 }
 
 #[cfg(test)]
-mod test {
-    use crate::{Sorter, comb_sorter::CombSorter};
+mod tests {
+    use super::*;
+    use crate::sorter_common_tests;
 
-    #[test]
-    fn test_comb_sorter() {
-        let sorter = CombSorter::default();
-        let mut slice = [1, 2, 3, 5, 4];
-        println!("{slice:?}");
-        sorter.sort(&mut slice);
-        assert_eq!(slice, [1, 2, 3, 4, 5]);
-    }
-
-    #[test]
-    fn test_comb_sorter_strings() {
-        let sorter = CombSorter::default();
-        let mut slice = ["z", "d", "d", "q", "l", "a"];
-        println!("{slice:?}");
-        sorter.sort(&mut slice);
-        assert_eq!(slice, ["a", "d", "d", "l", "q", "z"]);
-    }
+    sorter_common_tests!(comb_common_tests, CombSorter::default());
 }
