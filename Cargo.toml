@@ -1,11 +1,12 @@
 [package]
 name = "maniac"
 version = "0.1.0"
+authors = ["PierreBou91"]
 edition = "2024"
 description = "A Rust library implementing different sorting algorithms."
-license = "MIT OR Apache-2.0"
-repository = "TBD"
-readme = "# Maniac"
+license = "Unlicense"
+repository = "https://github.com/PierreBou91/maniac"
+readme = "README.md"
 keywords = ["sorting", "algorithms", "rust"]
 categories = ["algorithms"]
 
