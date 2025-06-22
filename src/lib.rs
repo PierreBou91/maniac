@@ -15,6 +15,10 @@
 /// [`CombSorter`] is the implementation of the [comb sort algorithm](https://en.wikipedia.org/wiki/Comb_sort)
 pub mod comb_sorter;
 pub use comb_sorter::*;
+/// [`InsertionSorter`] is the implementation of the [insertion sort algorithm](https://en.wikipedia.org/wiki/Insertion_sort)
+pub mod insertion_sorter;
+pub use insertion_sorter::*;
+
 mod standard_sorter;
 mod test_macros;
 
