@@ -2,9 +2,9 @@ use super::Sorter;
 
 /// [`CombSorter`]
 ///
-/// The [comb sort](https://en.wikipedia.org/wiki/Comb_sort) is essentially a bubble sort but instead
-/// of comparing an item at index i with the item at index i+1, there is a wider gap between two
-/// compared items.
+/// The [*comb sort*](https://en.wikipedia.org/wiki/Comb_sort) is essentially a bubble sort but
+/// instead of comparing an item at index i with the item at index i+1, there is a wider gap between
+/// two compared items.
 ///
 /// This gap is the ratio between the lenght of the sorted slice and shrink factor.
 ///
@@ -23,7 +23,7 @@ use super::Sorter;
 /// Complexity:
 /// |Best|Average|Worst|Space|In-place|
 /// |---|---|---|---|---|
-/// |n log n|n<sup>2</sup>|n<sup>2</sup>|1|Yes|
+/// |*O(n log n)*|*O(n<sup>2</sup>)*|*O(n<sup>2</sup>)*|*1*|Yes|
 #[derive(Debug, Clone, Copy)]
 pub struct CombSorter {
     // TODO: determine wether it should be public, or at least give a `with` constructor or builder

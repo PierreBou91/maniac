@@ -2,17 +2,13 @@ use super::Sorter;
 
 /// [`InsertionSorter`]
 ///
-/// The classic [*insertion sort*](https://en.wikipedia.org/wiki/Insertion_sort) builds the
-/// result incrementally: it scans the slice from left to right and inserts each element into the
+/// The classic [*insertion sort*](https://en.wikipedia.org/wiki/Insertion_sort) builds the result
+/// incrementally: it scans the slice from left to right and inserts each element into the
 /// already-sorted prefix that lies to its left.  After processing position `i` the sub-slice
 /// `[..=i]` is guaranteed to be in order.
 ///
-/// Because it touches only a small, contiguous part of the array at every step, insertion sort
-/// is an excellent choice for **small** inputs (≈ ≤ 32 elements) or for **partially-sorted**
-/// data, where it runs in almost linear time.
-///
-/// This implementation lets you choose **how** the out-of-place element is moved into position
-/// via the [`Method`] field:
+/// This implementation lets you choose **how** the out-of-place element is moved into position via
+/// the [`Method`] field:
 ///
 /// | Method                     | Stable | Inner data move                | Remarks                                      |
 /// |----------------------------|:------:|--------------------------------|----------------------------------------------|
