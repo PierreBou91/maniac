@@ -79,6 +79,7 @@ All contribution will fall under Unlicense
 - [ ] Add support for plotting or reporting benchmark results
 - [ ] Provide rich examples and docs for each algorithm
 - [ ] Test behavior on large datasets and edge cases
+- [ ] Property testing with quickcheck or equivalent crate
 
 ---
 

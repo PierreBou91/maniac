@@ -1,7 +1,32 @@
 use super::Sorter;
 
 /// [`CombSorter`]
+///
+/// The [comb sort](https://en.wikipedia.org/wiki/Comb_sort) is essentially a bubble sort but instead
+/// of comparing an item at index i with the item at index i+1, there is a wider gap between two
+/// compared items.
+///
+/// This gap is the ratio between the lenght of the sorted slice and shrink factor.
+///
+/// The shrink factor is arbitrarily decided by the implementor, some benchmark have empirically
+/// determined 1.3 to be close to the optimal value. You'll find more intersting facts on the wiki
+/// page.
+///
+/// Every time the algorithm finishes an iteration the gap is shrinked again by the same factor.
+///
+/// One notable aspect of this algorithm is the "rule of 11" described as such on the [wikipedia
+/// page](https://en.wikipedia.org/wiki/Comb_sort)
+/// > One additional refinement suggested by Lacey and Box is the "rule of 11": always use a gap
+/// > size of 11, rounding up gap sizes of 9 or 10 (reached by dividing gaps of 12, 13 or 14 by 1.3)
+/// > to 11. This eliminates turtles surviving until the final gap-1 pass.
+///
+/// Complexity:
+/// |Best|Average|Worst|Space|In-place|
+/// |---|---|---|---|---|
+/// |n log n|n<sup>2</sup>|n<sup>2</sup>|1|Yes|
 pub struct CombSorter {
+    // TODO: determine wether it should be public, or at least give a `with` constructor or builder
+    // pattern
     shrink_factor: f32,
 }
 
@@ -29,6 +54,7 @@ impl<T: Ord> Sorter<T> for CombSorter {
                 gap = 1;
                 sorted = true;
             } else if gap == 9 | 10 {
+                // The aforementioned rule of 11
                 gap = 11;
             }
             let mut iteration = 0;

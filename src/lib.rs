@@ -14,7 +14,6 @@
 
 /// [`CombSorter`] is the implementation of the [comb sort algorithm](https://en.wikipedia.org/wiki/Comb_sort)
 pub mod comb_sorter;
-
 pub use comb_sorter::*;
 mod standard_sorter;
 
