@@ -24,6 +24,9 @@ pub use bubble_sorter::*;
 /// [`CocktailShakerSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
 pub mod cocktail_shaker_sorter;
 pub use cocktail_shaker_sorter::*;
+/// [`GnomeSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+pub mod gnome_sorter;
+pub use gnome_sorter::*;
 
 mod standard_sorter;
 mod test_macros;
