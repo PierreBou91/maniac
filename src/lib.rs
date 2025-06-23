@@ -21,6 +21,9 @@ pub use insertion_sorter::*;
 /// [`BubbleSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
 pub mod bubble_sorter;
 pub use bubble_sorter::*;
+/// [`CocktailShakerSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+pub mod cocktail_shaker_sorter;
+pub use cocktail_shaker_sorter::*;
 
 mod standard_sorter;
 mod test_macros;
