@@ -2,16 +2,15 @@ use super::Sorter;
 
 /// [`BubbleSorter`]
 ///
-/// The classic [*bubble sort*](https://en.wikipedia.org/wiki/Bubble_sort) repeatedly
-/// “bubbles” the largest remaining element to the end of the slice by swapping adjacent
-/// out-of-order pairs.  After pass *k* the last *k* items are in their final positions.
+/// The classic [*bubble sort*](https://en.wikipedia.org/wiki/Bubble_sort) repeatedly “bubbles” the
+/// largest remaining element to the end of the slice by swapping adjacent out-of-order pairs. After
+/// pass *k* the last *k* items are in their final positions.
 ///
-/// Bubble sort is prized for its extreme simplicity but runs in *O(n²)* time, so it is
-/// suitable only for very small slices or as a teaching example.  It is, however, *stable*
-/// and needs no extra memory.
+/// Bubble sort is prized for its extreme simplicity but runs in *O(n²)* time, so it is suitable
+/// only for very small slices or as a teaching example.  It is, however, *stable* and needs no
+/// extra memory.
 ///
-/// This implementation supports three optimisation levels, chosen with the [`Optimization`]
-/// field:
+/// This implementation supports three optimisation levels, chosen with the [`Optimization`] field:
 ///
 /// | Variant | Stable | Pass length of next round | Remarks                                                  |
 /// |---------|:------:|---------------------------|----------------------------------------------------------|
@@ -31,21 +30,21 @@ pub struct BubbleSorter {
 
 /// Pass-length optimisation strategies for [`BubbleSorter`].
 ///
-/// All variants keep bubble sort’s canonical behaviour (*stable*, *in-place*),
-/// but trade a bit of code complexity for fewer comparisons on average.
+/// All variants keep bubble sort’s canonical behaviour (*stable*, *in-place*), but trade a bit of
+/// code complexity for fewer comparisons on average.
 #[derive(Debug, Default, Clone, Copy)]
 pub enum Optimization {
-    /// **Wikipedia optimisation** – after a pass, the slice from the last swap
-    /// to the end is already sorted, so the next pass can stop *earlier*.
+    /// **Wikipedia optimisation** – after a pass, the slice from the last swap to the end is
+    /// already sorted, so the next pass can stop *earlier*.
     ///
     /// Gives the largest constant-factor speed-up and is therefore the default.
     #[default]
     NewLen,
-    /// Discards only the *very last* element of the previous pass (which is now
-    /// in its correct position).  Simpler but less effective than `NewLen`.
+    /// Discards only the *very last* element of the previous pass (which is now in its correct
+    /// position). Simpler but less effective than `NewLen`.
     LenMinusOne,
-    /// Performs a full pass over the slice every time – the traditional
-    /// bubble sort found in introductory textbooks.
+    /// Performs a full pass over the slice every time – the traditional bubble sort found in
+    /// introductory textbooks.
     None,
 }
 
