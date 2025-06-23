@@ -86,7 +86,12 @@ mod tests {
     use super::*;
     use crate::{sorter_common_tests, sorter_stability_tests};
 
-    sorter_common_tests!(insertion_common_rotate_stable, InsertionSorter::default());
+    sorter_common_tests!(
+        insertion_common_rotate_stable,
+        InsertionSorter {
+            method: Method::RotateStable
+        }
+    );
     sorter_common_tests!(
         insertion_common_rotate_unstable,
         InsertionSorter {
@@ -101,7 +106,9 @@ mod tests {
     );
     sorter_stability_tests!(
         insertion_stability_rotate_stable,
-        InsertionSorter::default()
+        InsertionSorter {
+            method: Method::RotateStable
+        }
     );
     sorter_stability_tests!(
         insertion_stability_swap,

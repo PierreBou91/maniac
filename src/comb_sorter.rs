@@ -28,7 +28,9 @@ use super::Sorter;
 pub struct CombSorter {
     // TODO: determine wether it should be public, or at least give a `with` constructor or builder
     // pattern
-    shrink_factor: f32,
+    /// The shrink factor is the factor by wich we divide the gap every new iteration. It has been
+    /// determined to reach its optimal value around 1.3
+    pub shrink_factor: f32,
 }
 
 impl Default for CombSorter {
@@ -75,5 +77,5 @@ mod tests {
     use super::*;
     use crate::sorter_common_tests;
 
-    sorter_common_tests!(comb_common_tests, CombSorter::default());
+    sorter_common_tests!(comb_common_tests, CombSorter { shrink_factor: 1.3 });
 }
