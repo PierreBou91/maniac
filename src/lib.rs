@@ -18,6 +18,9 @@ pub use comb_sorter::*;
 /// [`InsertionSorter`] is the implementation of the [insertion sort algorithm](https://en.wikipedia.org/wiki/Insertion_sort)
 pub mod insertion_sorter;
 pub use insertion_sorter::*;
+/// [`BubbleSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+pub mod bubble_sorter;
+pub use bubble_sorter::*;
 
 mod standard_sorter;
 mod test_macros;
