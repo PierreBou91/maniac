@@ -1,0 +1,23 @@
+use super::Sorter;
+
+/// Doc
+#[derive(Debug, Default, Clone, Copy)]
+pub struct InsertionSorter;
+
+impl<T: Ord> Sorter<T> for InsertionSorter {
+    fn sort(self, slice: &mut [T]) {
+        slice.sort();
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::{sorter_common_tests, sorter_stability_tests};
+
+    sorter_common_tests!(insertion_common_rotate_stable, InsertionSorter::default());
+    sorter_stability_tests!(
+        insertion_stability_rotate_stable,
+        InsertionSorter::default()
+    );
+}
