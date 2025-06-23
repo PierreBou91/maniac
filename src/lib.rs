@@ -21,10 +21,10 @@ pub use insertion_sorter::*;
 /// [`BubbleSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
 pub mod bubble_sorter;
 pub use bubble_sorter::*;
-/// [`CocktailShakerSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+/// [`CocktailShakerSorter`] is the implementation of the [cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
 pub mod cocktail_shaker_sorter;
 pub use cocktail_shaker_sorter::*;
-/// [`GnomeSorter`] is the implementation of the [bubble sort algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+/// [`GnomeSorter`] is the implementation of the [gnome sort](https://en.wikipedia.org/wiki/Gnome_sort)
 pub mod gnome_sorter;
 pub use gnome_sorter::*;
 
