@@ -27,6 +27,9 @@ pub use cocktail_shaker_sorter::*;
 /// [`GnomeSorter`] is the implementation of the [gnome sort](https://en.wikipedia.org/wiki/Gnome_sort)
 pub mod gnome_sorter;
 pub use gnome_sorter::*;
+/// [`OddEvenSorter`] is the implementation TEST MY LINK of the [odd-even sort](https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort)
+pub mod odd_even_sorter;
+pub use odd_even_sorter::*;
 
 mod standard_sorter;
 mod test_macros;
